@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "davinci-resolve": {
+      "command": "/RUTA/A/davinci-resolve-mcp/venv/bin/python",
+      "args": ["/RUTA/A/davinci-resolve-mcp/src/server.py"],
+      "env": {
+        "RESOLVE_SCRIPT_API": "/opt/resolve/Developer/Scripting",
+        "RESOLVE_SCRIPT_LIB": "/opt/resolve/libs/Fusion/fusionscript.so",
+        "PYTHONPATH": "/opt/resolve/Developer/Scripting/Modules"
+      }
+    }
+  }
+}
