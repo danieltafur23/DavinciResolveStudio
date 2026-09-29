@@ -22,8 +22,9 @@ Configuración para controlar **DaVinci Resolve Studio 21** desde Claude (Claude
 ## 2. Preparar Resolve
 
 1. Abre DaVinci Resolve Studio 21.
-2. **DaVinci Resolve ▸ Preferences ▸ System ▸ General ▸ External scripting using** → **Local**.
-3. Reinicia Resolve y abre un proyecto.
+2. Si existe, pon **DaVinci Resolve ▸ Preferences ▸ System ▸ General ▸ External scripting using** en **Local** y reinicia Resolve.
+   - En **Resolve Studio 21.1** esta opción ya no aparece en Preferencias y el scripting externo funciona sin configurarla (verificado en 21.1.0.17, macOS).
+3. Abre un proyecto.
 
 ## 3. Instalar el servidor MCP
 
@@ -101,6 +102,7 @@ Rutas de la API de Resolve por sistema:
 | Síntoma | Solución |
 | --- | --- |
 | `scriptapp("Resolve")` devuelve `None` | Resolve no está abierto, no es Studio, o *External scripting* no está en **Local**. |
+| El instalador dice *"Running, but the scripting bridge returned no connection"* | Puede ser una falsa alarma: prueba la conexión con `scripts/check_resolve.py` antes de cambiar de Python. Python 3.13 funciona con Resolve Studio 21.1. |
 | Falla con Python 3.13/3.14 | Instala Python 3.12 y define `DAVINCI_RESOLVE_MCP_PYTHON=/ruta/a/python3.12`. |
 | El servidor no aparece en Claude Desktop (Windows) | Revisa la ruta MSIX indicada arriba. |
 | Error de `PYTHONPATH` / módulo no encontrado | Verifica las rutas de la tabla; en Windows el instalador añade `PYTHONHOME` automáticamente. |
